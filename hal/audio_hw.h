@@ -40,6 +40,7 @@
 
 #include <stdlib.h>
 #include <cutils/list.h>
+#include <hardware/audio_amplifier.h>
 #include <hardware/audio.h>
 #include <tinyalsa/asoundlib.h>
 #include <tinycompress/tinycompress.h>
@@ -497,6 +498,7 @@ struct audio_device {
     int perf_lock_opts[MAX_PERF_LOCK_OPTS];
     int perf_lock_opts_size;
     bool native_playback_enabled;
+    amplifier_device_t *amp;
     bool asrc_mode_enabled;
     qahwi_device_t qahwi_dev;
     bool vr_audio_mode_enabled;
